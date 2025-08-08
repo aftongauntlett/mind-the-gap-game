@@ -5,7 +5,7 @@ import type { Entity, EntityId } from './Entity';
  * System interface forward declaration to avoid circular imports.
  */
 interface System {
-  update(deltaTime: number, world: World): void;
+  update(_deltaTime: number, _world: World): void;
   destroy?(): void;
 }
 

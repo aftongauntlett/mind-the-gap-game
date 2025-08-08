@@ -12,13 +12,16 @@ export interface Component {
  * Component type registry for type-safe component management.
  */
 export type ComponentType<T extends Component = Component> = new (
-  entityId: EntityId,
-  ...args: unknown[]
+  _entityId: EntityId,
+  ..._args: unknown[]
 ) => T;
 
 /**
  * Abstract base class for components.
  */
 export abstract class BaseComponent implements Component {
-  constructor(public readonly entityId: EntityId) {}
+  constructor(public readonly entityId: EntityId) {
+    // EntityId is stored as a public readonly property for component identification
+    void entityId; // Explicitly mark as used to satisfy linter
+  }
 }
