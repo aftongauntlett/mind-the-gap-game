@@ -1,4 +1,4 @@
-import { MainScene } from '@game/scenes/MainScene';
+import { PlayScene } from '@game/scenes/PlayScene';
 import Phaser from 'phaser';
 
 /**
@@ -28,6 +28,6 @@ export function createGameConfig(): Phaser.Types.Core.GameConfig {
         enableSleeping: true,
       },
     },
-    scene: [MainScene],
+    scene: [PlayScene],
   };
 }
